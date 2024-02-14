@@ -7,14 +7,15 @@ This repository contains a backend API for a Question-Answering (QA) bot designe
 The goal is to create an API that can receive questions and a reference document as inputs and provide accurate answers to the questions using the context provided by the document.
 
 ## Branch
+
 * __main__ - consists of the implementation of this bot using Openai
 * __langchain__ - consists of the implementation of this bot using openai and Langchain 
 
 ## Features
 
-- Supports two types of input files: JSON and PDF.
-- Answers questions based on the content of the provided document.
-- Outputs answers in a structured JSON format.
+* Supports two types of input files: JSON and PDF.
+* Answers questions based on the content of the provided document.
+* Outputs answers in a structured JSON format.
 
 ## Input Requirements
 
@@ -37,10 +38,10 @@ The API returns a JSON list with each question paired with its corresponding ans
 
 ## Technology Requirements
 
-- Python 3.x
-- LangChain (Python)
-- OpenAI (gpt-3.5-turbo model)
-- VectorDB
+* Python 3.x
+* LangChain (Python)
+* OpenAI (gpt-3.5-turbo model)
+* VectorDB
 
 ## Installation
 
@@ -62,7 +63,7 @@ The API will be available at `http://127.0.0.1:8000`.
 
 ## Endpoints
 
-- `POST /question-answer`: Accepts a multipart/form-data request with `question_file` and `document_file`.
+* `POST /question-answer`: Accepts a multipart/form-data request with `question_file` and `document_file`.
 
 ## Sample Input Files
 

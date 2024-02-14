@@ -9,8 +9,8 @@ This repository contains a backend API for a Question-Answering (QA) bot designe
 The goal is to create an API that can receive questions and a reference document as inputs and provide accurate answers to the questions using the context provided by the document.
 
 ## Branch
-main - consists implementation of this bot using openai
-langchain - consists implementation of this bot using openai and Langchain 
+* __main__ - consists OpenAI implementation of this bot
+* __langchain__ - consists Lanchain implementation of this bot
 
 ## Features
 

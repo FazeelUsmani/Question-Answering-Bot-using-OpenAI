@@ -1,33 +1,38 @@
+from venv import logger
 from typing import List
-# from langchain_openai import OpenAI
+from fastapi import HTTPException
 from .file_service import read_file
 from dotenv import load_dotenv
 import os
-from openai import OpenAI
+from langchain.schema import HumanMessage, SystemMessage
+from langchain_openai import ChatOpenAI
 
-# Loading environment variables from .env file
+# Loading environment variables, make sure that you've OPENAI_API_KEY in .env file.
 load_dotenv()
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
 if not openai_api_key:
     raise ValueError("OpenAI API key not found. Please set the OPENAI_API_KEY environment variable.")
 
-client = OpenAI(api_key=openai_api_key)
-# client = OpenAI(api_key=openai_api_key, model="gpt-3.5-turbo")
+chat = ChatOpenAI(temperature=0, openai_api_key=openai_api_key)
 
 async def answer_question(question: str, context: str) -> str:
     """
     Uses Langchain to answer a single question based on the provided context.
     """  
-    response = client.chat.completions.create(model="gpt-3.5-turbo",
-                messages = [
-                    {'role': 'system', 'content': context},
-                    {'role': 'user', 'content': question}],
-                max_tokens=1024,
-                n=1,
-                stop=None,
-                temperature=0.5)
-    return response.choices[0].message.content.strip()
+    if question is None or context is None:
+        logger.error("Please provide both question and context")  
+        raise HTTPException(status_code=400, detail="None object found")
+    
+    messages = [
+        SystemMessage(
+            content=context
+        ),
+        HumanMessage(
+            content=question
+        ),
+    ]
+    return chat(messages).content
 
 async def answer_questions(question_file, document_file) -> List[dict]:
     """
@@ -35,15 +40,12 @@ async def answer_questions(question_file, document_file) -> List[dict]:
     """
     # Determine the file type and read the files
     questions = await read_file(question_file, question_file.content_type)
-    print(">>> questions ", questions)
     document = await read_file(document_file, document_file.content_type)
-    print(">>> document ", document, "doc type ", type(document))
     questions = [list(d.values())[0] for d in questions]
-    print(">>> all questions ", questions)
+
     if isinstance(questions, str):
         questions = [questions]
 
-    # Answer each question
     answers = []
     for question in questions:
         answer = await answer_question(question, document)

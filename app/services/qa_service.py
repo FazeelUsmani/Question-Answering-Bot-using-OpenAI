@@ -43,9 +43,6 @@ async def answer_questions(question_file, document_file) -> List[dict]:
     document = await read_file(document_file, document_file.content_type)
     questions = [list(d.values())[0] for d in questions]
 
-    if isinstance(questions, str):
-        questions = [questions]
-
     answers = []
     for question in questions:
         answer = await answer_question(question, document)

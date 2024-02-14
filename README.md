@@ -89,3 +89,8 @@ To run the tests, execute:
 ```bash
 pytest tests/
 ```
+
+## References
+
+1. [https://python.langchain.com/docs/use_cases/question_answering/](https://python.langchain.com/docs/use_cases/question_answering/)
+2. [https://python.langchain.com/docs/integrations/chat/openai](https://python.langchain.com/docs/integrations/chat/openai)

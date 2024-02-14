@@ -79,7 +79,7 @@ The API will be available at `http://127.0.0.1:8000`.
 
 ### Document (PDF)
 
-The document should be a PDF file containing text that can be extracted and used as context for answering the questions. For example, refer [this pdf](/zania_pentest_pdf%20(2).pdf)
+The document should be a PDF file containing text that can be extracted and used as context for answering the questions. For example, refer [this pdf](/input_files/zania_pentest_pdf%20(2).pdf)
 
 ## Testing
 

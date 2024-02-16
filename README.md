@@ -9,7 +9,7 @@ The goal is to create an API that can receive questions and a reference document
 ## Branch
 
 * __main__ - consists OpenAI implementation of this bot
-* __langchain__ - consists Lanchain implementation of this bot
+* __langchain__ - consists Langchain implementation of this bot
 
 ## Features
 

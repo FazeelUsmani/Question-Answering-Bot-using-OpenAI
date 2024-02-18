@@ -6,6 +6,10 @@ This repository contains a backend API for a Question-Answering (QA) bot designe
 
 The goal is to create an API that can receive questions and a reference document as inputs and provide accurate answers to the questions using the context provided by the document.
 
+## Suggestions
+
+I'm open for suggestions, how this project can be tweaked to fit in your usecase. For example, to accept .docx or image as input context, search in your order history and so on and so forth. Feel free to contact me.
+
 ## Branch
 
 * __main__ - consists OpenAI implementation of this bot

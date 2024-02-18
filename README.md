@@ -13,7 +13,7 @@ I'm open for suggestions, how this project can be tweaked to fit in your usecase
 ## Branch
 
 * __main__ - consists OpenAI implementation of this bot
-* __langchain__ - consists Lanchain implementation of this bot
+* __langchain__ - consists Langchain implementation of this bot
 
 ## Features
 

@@ -45,7 +45,7 @@ The API returns a JSON list with each question paired with its corresponding ans
 * Python 3.x
 * LangChain (Python)
 * OpenAI (gpt-3.5-turbo model)
-* VectorDB
+* VectorDB (PineCone)
 
 ## Installation
 
@@ -92,6 +92,19 @@ To run the tests, execute:
 ```bash
 pytest tests/
 ```
+
+## Pinecone setup
+
+1. To use Pinecone as a vector database, first we need to create any cloud billing account. [Refer GCP billing account activation]
+2. After signing up and linking the GCP account, select starter pack and you'll receive $100 free credits.
+
+## Google Cloud Platform billing account activation
+
+On Signing up on Pinecone, it'll ask you to connect to any cloud service provider. I've selected GCP and created a free account to receive $300 credits for a span of 90 days
+
+![gcp_account_activation](pics/GCP_Activate_billing_account.png)
+
+
 
 ## References
 
